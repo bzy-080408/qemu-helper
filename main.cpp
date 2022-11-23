@@ -9,7 +9,7 @@ typedef unsigned char UBIT8;
 #define UNICODE
 // PATH_CONFIG
 string qemu = "qemu-system";
-string ARCH[4] = {"i386", "x86_64", "aarch64", "arm"};
+string ARCH[32] = {"i386", "x86_64", "aarch64", "arm","mips","mips64","ppc","ppc64","riscv32","riscv64"};
 string CONFIG_PATH = "config/";
 string TMP_PATH = "tmp/";
 
@@ -319,6 +319,12 @@ int main()
             if (enableKVM)
             {
                 outfile << " -enable-kvm ";
+            }
+            if(enableTCG){
+                outfile << " -accel tcg,thread=multi ";
+            }
+            for(int i = 0;i < virtualdevices.size();i++){
+                outfile << " " << virtualdevices[i] << " ";
             }
         }
         if (choose == "list")

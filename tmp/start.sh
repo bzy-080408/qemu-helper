@@ -1,1 +1,0 @@
-qemu-system- -M  -cpu  -m 
