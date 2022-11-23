@@ -132,11 +132,11 @@ void virtualconfigupdate(string virtualconfigname) //读入虚拟机配置文件
     string tmp;
     cout << "debug: #1" << endl;
     int devicesize;
-    cin >> devicesize;
+    configin >> devicesize;
     cout << "debug: devicesize=" << devicesize << endl;
     for (int i = 1; i <= devicesize; i++)
     {
-        cin >> tmp;
+        configin >> tmp;
         virtualdevices.push_back(tmp);
     }
     cout << "debug: #2" << endl;
@@ -271,10 +271,10 @@ int main()
         "输入save保存虚拟机配置",
         "输入arch更改架构选项",
         "输入M更改计算机类型"
-        "输入hda更改第一个ide虚拟硬盘"
-        "输入hdb更改第一个ide虚拟硬盘"
-        "输入hdc更改第一个ide虚拟硬盘"
-        "输入hdd更改第一个ide虚拟硬盘"
+        "输入hda更改第一个ide虚拟硬盘",
+        "输入hdb更改第一个ide虚拟硬盘",
+        "输入hdc更改第一个ide虚拟硬盘",
+        "输入hdd更改第一个ide虚拟硬盘",
         "输入cpu更改CPU选项",
         "输入smp更改CPU的线程数",
         "输入m更改内存大小",
